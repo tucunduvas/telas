@@ -46,10 +46,10 @@ class App extends Component{
         <View>
             <Text> Olá Mundo! </Text>
             <Text> Exemplo! </Text>
-            <text style={{color: 'blue', fontSize:30, margin:15}}> meu exemplo! </text>  {/* nao precisa por px na formatacao, se por da erro*/}
+            <Text style={{color: 'blue', fontSize:30, margin:15}}> meu exemplo! </Text>  {/* nao precisa por px na formatacao, se por da erro*/}
 
             <Image source={{URL: 'url aqui'}}style={{width:300, heigth: 300}}/>
-            <Text> {curso}</Text>
+            <Text> {curso}</Text> {/* mostra o valor da variavel*/}
         </View>    
             )
 }
@@ -57,6 +57,8 @@ class App extends Component{
 }
  //extends pega todas as caracteristicas da classe component
 class App extends Component{
+    
+    <View>
     <Image source={{'url: coloca a url aqui'}} style={{width:300, height:300}}/> 
     {/* uri é o caminho da iamgem, se for por o libnk da internet tem que por com https */}
     {/* Image é obrigado a informar a largura e altura */}
@@ -64,13 +66,13 @@ class App extends Component{
 
     {/* para chamar o componente */}
     {/* <MinhaImagem/>  */}
-    {/* <MinhaImagem largura={400} altura{400} nome= "Imagem 1"/> */} {/*<- EXEMPLO DE PROPRIEDADE */}
-       
+     <MinhaImagem largura={400} altura={400} nome= "Imagem 1"/>  {/*<- EXEMPLO DE PROPRIEDADE */}
+     <MinhaImagem largura={200} altura={200} nome= "Imagem 4"/>    
     </View> 
 
 };
 
-export default App;
+export default App; // fala qual a função que vai rodar primeiro
 
     class MinhaImagem extends Component{
         render(){
@@ -78,12 +80,14 @@ export default App;
             return(
                 <View>
                     {/* <Image source={{url: img}} style={{width:300, height:300}}/>  COMENTEI PQ É IGUAL A DE BAIXO*/}
-                    <Image source={{uri: img}} style={{width: this.props.largura, height:this.props.altura}}> </Image> 
+                    <Image source={{uri: img}} style={{width: this.props.largura, height:this.props.altura}}> </Image> {/* this -> pega da classe */}
 {/* PASSA PROPRIEDADE DE UMA CLASSE PARA OUTRA                             */}
                     <Text> {this.props.nome}</Text>
                 </View>
             );
         }
+        //componente é o que compoe a view, pode reutilizar ele estilizando de varias formas 
     }
 
     
+                                 
